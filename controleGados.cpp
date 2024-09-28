@@ -1,5 +1,5 @@
-#include <stdio.h> //cabeÁalho padr„o de entrada/saÌda
-#include <iostream> //Recursos de entrada/saÌda baseados em fluxo. 
+#include <stdio.h> //cabe√ßalho padr√£o de entrada/sa√≠da
+#include <iostream> //Recursos de entrada/sa√≠da baseados em fluxo. 
 #include <locale.h> //Modifica a linguagem
 
 #define FAZENDA_GADOS 100 //Define maximo de gados em 100
@@ -42,7 +42,7 @@ void imprimir_leiteAbate(Gado fazenda[], int quantidade_gado) {
 			}
     }
 
-    printf("\n\tTotal de leite produzido por semana apÛs o abate: %.2f litros\n", totalLeite);
+    printf("\n\tTotal de leite produzido por semana ap√≥s o abate: %.2f litros\n", totalLeite);
 }
 //Imprime a quantidade de alimento consumido
 void imprimir_alimento(Gado fazenda[], int quantidade_gado) {
@@ -54,7 +54,7 @@ void imprimir_alimento(Gado fazenda[], int quantidade_gado) {
 
     printf("\n\tTotal de alimento gasto por semana: %.2f kg\n", totalAlimento);
 }
-//Imprime a quantidade de alimento consumido apÛs abate
+//Imprime a quantidade de alimento consumido ap√≥s abate
 void imprimir_alimentoAbate(Gado fazenda[], int quantidade_gado) {
     float totalAlimento = 0;
 
@@ -64,7 +64,7 @@ void imprimir_alimentoAbate(Gado fazenda[], int quantidade_gado) {
     	}
     }
 
-    printf("\tTotal de alimento gasto por semana apÛs abate: %.2f kg\n\n", totalAlimento);
+    printf("\tTotal de alimento gasto por semana ap√≥s abate: %.2f kg\n\n", totalAlimento);
 }
 //Imprime a quantidade de abates
 void imprimir_abates(Gado fazendo[], int quantidade_gado){
@@ -88,27 +88,27 @@ int main() {
 	printf("\n\n\t\t\t\t\t BEM-VINDO AO GERENCIAMENTO DE GADOS.\t\t\t\t\t\t\n");
 	do{		
 		printf("\n\n Para adicionar o gado, digite: 1");
-		printf("\n Para acessar InformaÁıes sobre a Fazenda, digite: 2");
+		printf("\n Para acessar Informa√ß√µes sobre a Fazenda, digite: 2");
 		printf("\n Para sair, digite: 3 \n");
-		printf("\n Digite a sua opÁ„o: ");	
+		printf("\n Digite a sua op√ß√£o: ");	
 		scanf("%d",&opcao);		
 		
 		switch (opcao){		
-			case 1:	//OpÁao para adicionar gados ao sistema	
+			case 1:	//Op√ßao para adicionar gados ao sistema	
 				if (quantidade_gado < FAZENDA_GADOS) {
-	                printf("\n\n\t\t\t\t\t\t MENU DE INFORMA«’ES \t\t\t\t\t\t\n\n\n");
-	                printf("\n\tCÛdigo do Gado: ");
+	                printf("\n\n\t\t\t\t\t\t MENU DE INFORMA√á√ïES \t\t\t\t\t\t\n\n\n");
+	                printf("\n\tC√≥digo do Gado: ");
 	                scanf("%s", gado.codigo);
 	                printf("\tQuantidade de leite que produz: ");
 	                scanf("%f", &gado.leite);
 	                printf("\tQuantidade de alimento que consome: ");
 	                scanf("%d", &gado.alimento);
-	                printf("\tMÍs de nascimento: ");
+	                printf("\tM√™s de nascimento: ");
 	                scanf("%d", &gado.mes);
 	                printf("\tAno de nascimento: ");
 	                scanf("%d", &gado.ano);
 	 
-	 				//Verifica se o gado adicionado, est· apto ou n„o para o abate
+	 				//Verifica se o gado adicionado, est√° apto ou n√£o para o abate
 	                int idade = calcularIdade(gado.ano);
 	                if (idade > 5 || (idade == 5 && gado.mes <= 6) || (gado.leite < 40 && gado.leite > 0) || 
 					(gado.leite >= 50 && gado.leite <= 70 && gado.alimento >= 50)) {
@@ -116,12 +116,12 @@ int main() {
 	                    	printf("\tCampo abate preenchido.");
 	                } else {
 	                    	gado.abate = 'N';
-	                    	printf("\tCampo abate n„o preenchido.");
+	                    	printf("\tCampo abate n√£o preenchido.");
 	                    }
 	                fazenda[quantidade_gado++] = gado;
 	            } else {
 	            	//Limite de gados disponiveis
-	                printf("A fazenda j· atingiu o limite de 100 gados.\n");
+	                printf("A fazenda j√° atingiu o limite de 100 gados.\n");
 	            }
 			break;
 			
@@ -138,11 +138,11 @@ int main() {
 			printf("\nFinalizando programa...\n");
 			break;
 							
-			default: //Caso digite opcao n„o existente
+			default: //Caso digite opcao n√£o existente
 				printf("\nDigite novamente...\n");		
 				break;		
 			}	
-	}while(opcao != 3);	// Programa roda enquanto o usuario n„o escolher sair
+	}while(opcao != 3);	// Programa roda enquanto o usuario n√£o escolher sair
 
 return 0;
 }
